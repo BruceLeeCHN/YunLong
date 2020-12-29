@@ -20,6 +20,8 @@
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
     </properties>
 
+
+
     <dependencies>
 
         <!-- lombok -->
@@ -104,7 +106,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>priv.bruce.nekobox.Application</mainClass>
+                    <mainClass>pers.bruce.yunlong.elf.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>
