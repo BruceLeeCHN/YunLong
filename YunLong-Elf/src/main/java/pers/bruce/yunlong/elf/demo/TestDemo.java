@@ -29,7 +29,7 @@ public class TestDemo implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        String imagePath = "C:\\Users\\Administrator.PC-202006021304\\Desktop\\temp\\39F0E927-49B2-4b6f-8CCE-DE72775A3725.png";
+        String imagePath = "C:\\Users\\Administrator.PC-202006021304\\Desktop\\temp\\5328F055-38AD-4ff2-ADA6-056853394312.png";
 
         // 图片查找
         ImagePosition imagePosition = Screen.imageFind(imagePath, 10);

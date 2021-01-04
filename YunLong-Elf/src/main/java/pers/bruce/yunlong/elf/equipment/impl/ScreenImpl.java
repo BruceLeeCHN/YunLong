@@ -179,9 +179,9 @@ public class ScreenImpl implements Screen {
         while (true) {
             // 比较四角RGB值 初步筛选
             if (compare(targetRgbArr[currentY][currentX], sampleUpperLeftRgb, accuracy)
-                    && compare(targetRgbArr[currentY][currentX + sampleWidthSize], sampleUpperRightRgb, accuracy)
+                    && compare(targetRgbArr[currentY][currentX + sampleWidthSize - 1], sampleUpperRightRgb, accuracy)
                     && compare(targetRgbArr[currentY + sampleHeightSize][currentX], sampleLowerLeftRgb, accuracy)
-                    && compare(targetRgbArr[currentY + sampleHeightSize][currentX + sampleWidthSize], sampleLowerRightRgb, accuracy)) {
+                    && compare(targetRgbArr[currentY + sampleHeightSize][currentX + sampleWidthSize - 1], sampleLowerRightRgb, accuracy)) {
 
                 // 初步匹配成功，进行精准匹配
                 Boolean isMatchAll = matchAll(targetRgbArr, sampleRgbArr, accuracy, currentX, currentY);
@@ -193,12 +193,12 @@ public class ScreenImpl implements Screen {
             }
 
             // 初步匹配失败 横向坐标偏移后未超出，横向坐标偏移
-            if (++currentX + sampleWidthSize < targetWidthSize) {
+            if (++currentX + sampleWidthSize <= targetWidthSize) {
                 continue;
             }
 
             // 纵向坐标自增后下标未越界，纵向坐标偏移，横向坐标初始化
-            if (++currentY + sampleHeightSize < targetHeightSize) {
+            if (++currentY + sampleHeightSize <= targetHeightSize) {
                 currentX = 0;
                 continue;
             }
